@@ -1,23 +1,67 @@
-:root {
-  --bg-primary: #0b0c10;
-  --bg-secondary: #1f2833;
-  --text-primary: #ffffff;
-  --text-muted: #c5c6c7;
-  --accent-cyan: #66fcf1;
-  --accent-teal: #45a29e;
-  --danger-red: #e63946;
-  --warning-orange: #f39c12;
-  --success-green: #2ecc71;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+  /* Fondos y Capas */
+  --bg-black: #050507;
+  --bg-overlay: rgba(5, 5, 7, 0.85); /* Oscurece el video de fondo para resaltar el texto */
+  --glass-bg: rgba(15, 15, 20, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  
+  /* Tipografía */
+  --text-white: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dark: #cbd5e1;
+  
+  /* Colores de Marca y Estados (Tema WG) */
+  --red-accent: #dc2626;
+  --red-glow: rgba(220, 38, 38, 0.3);
+  --green-pass: #10b981;
+  --yellow-warn: #f59e0b;
+  
+  /* Bordes */
+  --border-accent: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Efecto cristal global (Glassmorphism) */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* Configuración global de Scrollbar (Barra de desplazamiento corporativa oscura) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
